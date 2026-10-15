@@ -1,10 +1,14 @@
+from typing import ClassVar
+
 from rest_framework import serializers
+
 from .models import Company, Review
+
 
 class CompanySerializer(serializers.ModelSerializer):
     class Meta:
         model = Company
-        fields = [
+        fields: ClassVar[list] = [
             "id",
             "owner",
             "name",
@@ -14,17 +18,18 @@ class CompanySerializer(serializers.ModelSerializer):
             "created_at",
             "updated_at",
         ]
-        read_only_fields = [
-            "id", 
-            "owner", 
-            "created_at", 
+        read_only_fields: ClassVar[list] = [
+            "id",
+            "owner",
+            "created_at",
             "updated_at",
         ]
+
 
 class ReviewSerializer(serializers.ModelSerializer):
     class Meta:
         model = Review
-        fields = [
+        fields: ClassVar[list] = [
             "id",
             "company",
             "user",
@@ -33,12 +38,10 @@ class ReviewSerializer(serializers.ModelSerializer):
             "created_at",
             "updated_at",
         ]
-        read_only_fields = [
+        read_only_fields: ClassVar[list] = [
             "id",
             "company",
             "user",
             "created_at",
-            "updated_at"
+            "updated_at",
         ]
-
-   

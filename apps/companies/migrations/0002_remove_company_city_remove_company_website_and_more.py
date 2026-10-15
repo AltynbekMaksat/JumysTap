@@ -5,54 +5,58 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('companies', '0001_initial'),
+        ("companies", "0001_initial"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='company',
-            name='city',
+            model_name="company",
+            name="city",
         ),
         migrations.RemoveField(
-            model_name='company',
-            name='website',
+            model_name="company",
+            name="website",
         ),
         migrations.AddField(
-            model_name='company',
-            name='location',
-            field=models.CharField(default='Не указано', max_length=255),
+            model_name="company",
+            name="location",
+            field=models.CharField(default="Не указано", max_length=255),
             preserve_default=False,
         ),
         migrations.AddField(
-            model_name='company',
-            name='updated_at',
+            model_name="company",
+            name="updated_at",
             field=models.DateTimeField(auto_now=True),
         ),
         migrations.AddField(
-            model_name='review',
-            name='updated_at',
+            model_name="review",
+            name="updated_at",
             field=models.DateTimeField(auto_now=True),
         ),
         migrations.AlterField(
-            model_name='company',
-            name='description',
+            model_name="company",
+            name="description",
             field=models.TextField(),
         ),
         migrations.AlterField(
-            model_name='company',
-            name='industry',
+            model_name="company",
+            name="industry",
             field=models.CharField(max_length=100),
         ),
         migrations.AlterField(
-            model_name='company',
-            name='name',
+            model_name="company",
+            name="name",
             field=models.CharField(max_length=100),
         ),
         migrations.AlterField(
-            model_name='review',
-            name='rating',
-            field=models.IntegerField(validators=[django.core.validators.MinValueValidator(1), django.core.validators.MaxValueValidator(5)]),
+            model_name="review",
+            name="rating",
+            field=models.IntegerField(
+                validators=[
+                    django.core.validators.MinValueValidator(1),
+                    django.core.validators.MaxValueValidator(5),
+                ]
+            ),
         ),
     ]
