@@ -1,6 +1,8 @@
 Django
 djangorestframework
 python-decouple
-psycopg-binary
+psycopg[binary]
 djangorestframework-simplejwt
 django-unfold
+
+
