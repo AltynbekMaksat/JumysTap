@@ -5,8 +5,8 @@ from django.db import models
 
 
 class Role(models.TextChoices):
-    JOB_SEEKER = 'JOB_SEEKER', "Job Seeker"
-    EMPLOYER = 'EMPLOYER', "Employer"
+    JOB_SEEKER = "job_seeker", "Job Seeker"
+    EMPLOYER = "employer", "Employer"
 
 class User(AbstractUser):
 
