@@ -33,12 +33,10 @@ class Resume(models.Model):
         default=False,
     )
     created_at = models.DateTimeField(
-        null=False,
-        blank=True,
+        auto_now_add =True,
     )
     updated_at = models.DateTimeField(
-        null=False,
-        blank=True,
+        auto_now = True,
     )
 
 class Education(models.Model):
@@ -128,6 +126,7 @@ class ApplicationStatus (models.TextChoices):
     VIEWED = "viewed", "Viewed"
     INTERVIEW = "interview", "Interview"
     ACCEPTED = "accepted", "Accepted"
+    REJECTED = "rejected", "Rejected"
 
 class Application(models.Model):
     id = models.UUIDField (

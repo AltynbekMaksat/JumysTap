@@ -22,6 +22,12 @@ class ApplicationSerializer(serializers.ModelSerializer):
         user = self.context["request"].user
         vacancy = attrs["vacancy"]
         resume = attrs["resume"]
+        application = attrs["application"]
+
+        if application.status == ApplicationStatus.REJECTED:
+            raise serializers.ValidationError(
+                "Cannot schedule an interview for a rejected application."
+            )
 
         if user.role != "job_seeker":
             raise serializers.ValidationError(
