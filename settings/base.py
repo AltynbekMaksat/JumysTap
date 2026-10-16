@@ -46,8 +46,11 @@ INSTALLED_APPS = [
     "apps.vacancies.apps.VacanciesConfig",
     "apps.applications.apps.ApplicationsConfig",
 
-]
 
+
+    "apps.interviews.apps.InterviewsConfig",
+
+]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
