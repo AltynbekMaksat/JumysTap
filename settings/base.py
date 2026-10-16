@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
     "apps.users.apps.UsersConfig",
     "apps.companies.apps.CompaniesConfig",
+    "apps.vacancies.apps.VacanciesConfig",
 
 ]
 
